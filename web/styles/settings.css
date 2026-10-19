@@ -147,6 +147,22 @@ a.help_link_widget {
 .change-email {
     display: flex;
     gap: 0.5rem;
+    min-width: 0;
+
+    /* Keep the edit button visible when the account email is very long. */
+    #email_field_container {
+        min-width: 0;
+        flex: 1 1 auto;
+
+        .settings_text_input {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+    }
+
+    #change_email_button {
+        flex-shrink: 0;
+    }
 }
 
 .admin-realm-description,
